@@ -1,0 +1,33 @@
+version: '3'
+services:
+  frontend:
+    image: renaudhager/frontend-training-webapp:latest
+    container_name: frontend
+    networks:
+      - demo
+    ports:
+      - 5000:5000
+    environment:
+      -  SERVICE_A_FQDN=backend-a
+      -  SERVICE_B_FQDN=backend-b
+  backend-a:
+    image: renaudhager/backend-training-webapp:latest
+    container_name: backend-a
+    networks:
+      - demo
+    environment:
+      - CONTAINER_PORT=80
+    ports:
+      - 8080:80
+  backend-b:
+    image: renaudhager/backend-training-webapp:latest
+    container_name: backend-b
+    networks:
+      - demo
+    environment:
+      - CONTAINER_PORT=80
+    ports:
+      - 9080:80
+networks:
+  demo:
+    driver: bridge
