@@ -1,6 +1,8 @@
 ## Docker Small WebApp
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/renaudhager/python-training-webapp.svg)](https://hub.docker.com/r/renaudhager/python-training-webapp)
+Backend [![Backend Docker Pulls](https://img.shields.io/docker/pulls/renaudhager/backend-training-webapp.svg)](https://hub.docker.com/r/renaudhager/backend-training-webapp)
+
+Frontend [![Frontend Docker Pulls](https://img.shields.io/docker/pulls/renaudhager/frontend-training-webapp.svg)](https://hub.docker.com/r/renaudhager/frontend-training-webapp)
 
 # Description
 Small python, inspired by Docker training application. (https://github.com/docker-training/webapp)
