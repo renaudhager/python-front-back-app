@@ -7,4 +7,4 @@ RUN pip install -qr /tmp/requirements.txt
 COPY app.py /opt/webapp/
 WORKDIR /opt/webapp
 EXPOSE 5000
-CMD ["python", "app.py"]
+CMD ["python", "-u", "app.py"]

@@ -16,13 +16,13 @@ def hello():
 @app.route('/backend/a/<path>')
 def query_service_a(path):
     service_a_fqdn = str(os.environ.get('SERVICE_A_FQDN'))
-    r = requests.get('http://' + service_a_fqdn + "/" + path)
+    r = requests.get('http://' + service_a_fqdn + ":" + str(os.environ.get('SERVICE_A_PORT')) + "/" + path)
     return jsonify(r.json())
 
 @app.route('/backend/b/<path>')
 def query_service_b(path):
     service_b_fqdn = str(os.environ.get('SERVICE_B_FQDN'))
-    r = requests.get('http://' + service_b_fqdn + "/" + path)
+    r = requests.get('http://' + service_b_fqdn + ":" + str(os.environ.get('SERVICE_B_PORT')) + "/" + path)
     return jsonify(r.json())
 
 @app.route("/hostname")
@@ -31,7 +31,7 @@ def return_hostname():
 
 @app.route("/headers")
 def return_headers():
-    return str(request.headers)
+    return jsonify(dict(request.headers))
 
 @app.route("/http_code")
 def return_http_code():

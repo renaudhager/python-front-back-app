@@ -30,7 +30,7 @@ def return_version():
 
 @app.route("/headers")
 def return_headers():
-    return str(request.headers)
+    return jsonify(dict(request.headers))
 
 @app.route("/http_code")
 def return_http_code():
